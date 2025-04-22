@@ -1,0 +1,33 @@
+/* CSS Reset */
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+html{
+    color-scheme: dark;
+}
+
+/* Header */
+header{
+    padding: 200px 0px 50px 0px;
+
+}
+
+p{
+    margin: 15px; 
+}
+
+input{
+    width: 70px;
+    height: 20px;
+}
+
+section{
+        padding: 20px;
+        margin: 10px 25px 10px 25px;
+        box-shadow: 0 5px 10px rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+}
