@@ -31,3 +31,10 @@ section{
         box-shadow: 0 5px 10px rgba(255, 255, 255, 0.1);
         border-radius: 10px;
 }
+
+button{
+        color: aliceblue;
+        background-color: darkblue;
+        border-radius: 20%; 
+        border-color: darkblue;
+}

@@ -6,7 +6,7 @@ function calcularImc(){
 
     // Processamento //
 
-    let imc = peso / (altura * altura);
+    const imc = peso / (altura * altura);
     let classificacao = '';
 
     if (imc < 18.5) {
