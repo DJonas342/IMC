@@ -1,9 +1,29 @@
-function calcularImc(){
+//1. Buscar por chave e valor em storage ao carregar o conteudo da página
+document.addEventListener("DOMContentLoaded", () => {
+    const campos = ["peso", "altura"];
+
+    campos.forEach(campo => {
+        const valor = localStorage.getItem(campo);
+        //2. Caso tenha, atribuir valor ao campo de peso e altura
+        if (valor){
+            const input = document.getElementById(campo);
+            if(input){
+                input.value = valor;
+            }
+        }
+    });
+});
+
+//3. Adicionar evento ao para salvar altura e peso ao clique do botão
+document.getElementById("calcular").addEventListener("click", (evento) => {
+    const button = evento.target;
     // Entrada //
 
-    let peso = document.getElementById("peso").value;
-    let altura = document.getElementById("altura").value;
-
+    let peso = parseFloat(document.getElementById("peso").value);
+    let altura = parseFloat(document.getElementById("altura").value);
+    //Salvar campos em storage
+    localStorage.setItem("peso", peso);
+    localStorage.setItem("altura", altura);
     // Processamento //
 
     const imc = peso / (altura * altura);
@@ -24,6 +44,6 @@ function calcularImc(){
         classificacao = 'Obesidade grau III';
     }
     // Saida //
-    document.getElementById("resultado").textContent = "O IMC é = "+ imc
+    document.getElementById("resultado").textContent = "O IMC é = "+ imc.toFixed(2);
     document.getElementById("classificação").textContent = "Classificação do IMC = "+ classificacao
-}
+});
