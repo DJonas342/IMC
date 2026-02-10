@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const campos = ["peso", "altura"];
 
     campos.forEach(campo => {
-        const valor = localStorage.getItem(campo);
+        const valor = sessionStorage.getItem(campo);
         //2. Caso tenha, atribuir valor ao campo de peso e altura
         if (valor){
             const input = document.getElementById(campo);
@@ -22,8 +22,8 @@ document.getElementById("calcular").addEventListener("click", (evento) => {
     let peso = parseFloat(document.getElementById("peso").value);
     let altura = parseFloat(document.getElementById("altura").value);
     //Salvar campos em storage
-    localStorage.setItem("peso", peso);
-    localStorage.setItem("altura", altura);
+    sessionStorage.setItem("peso", peso);
+    sessionStorage.setItem("altura", altura);
     // Processamento //
 
     const imc = peso / (altura * altura);
